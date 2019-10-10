@@ -3,16 +3,17 @@ package AdapterPattern05.case1;
 // object adapter implementation
 // B --> A
 public class BToAAdapter implements APlayer {
-  private Bplayer media;
 
-  public BToAAdapter(Bplayer media) {
+  private BPlayer media;
+
+  public BToAAdapter(BPlayer media) {
     this.media = media;
   }
 
+  //You can call B method using A method.
   @Override
   public void play(String filename) {
-    // call B method using A method
-    System.out.println("Using Adapter : " );
+    System.out.println("Using Adapter : ");
     media.playFile(filename);
   }
 
